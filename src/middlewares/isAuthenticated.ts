@@ -18,14 +18,14 @@ export function isAuthenticated(req: Request, res: Response, next: NextFunction)
 
 
   const [, token] = authToken.split(" ")
-  console.log(token)
+
 
 
 
   try {
     const { sub } = verify(token, process.env.JWT_SECRET) as PayLoad;
 
-    console.log(sub)
+
     req.user_id = sub;
 
 
